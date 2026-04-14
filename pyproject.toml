@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mqtt-fastapi-switches"
+version = "0.1.0"
+description = "FastAPI service for MQTT-driven switch registration"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.111,<1.0",
+    "paho-mqtt>=1.6",
+    "pydantic-settings>=2.2",
+    "sqlalchemy>=2.0",
+    "uvicorn[standard]>=0.30",
+]
+
+[project.optional-dependencies]
+dev = [
+    "httpx>=0.27",
+    "pytest>=8.0",
+    "ruff>=0.5",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*", "shared*", "webapp*", "simulator*"]
+exclude = ["tests*", "docker*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
