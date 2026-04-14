@@ -1,3 +1,4 @@
+# README-AI-GENERATED
 # MQTT Light Switch Manager
 
 Projekt symuluje komunikacje aplikacji webowej z prostymi urzadzeniami (wlaczniki swiatla) przez MQTT.
